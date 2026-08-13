@@ -1,5 +1,6 @@
-'use client'  
+'use client'
 import { FC , ReactNode } from "react"
+import Link from "next/link"
 import Markdown from 'react-markdown'
 import { Helmet } from 'react-helmet-async';
 import "./style.css"
@@ -7,21 +8,26 @@ import "./style.css"
 export const ArticleCard: FC<{ title: string , component:string , children:string }> = ({ title , component , children }) => {
   let url = "/" + component
   return (
-    <>      
-      <a href={url} className="articalBox">
+    <>
+      <Link href={url} className="articalBox">
         <h3>
           {title}
         </h3>
         <p>
           {children}
-        </p>        
-      </a>
+        </p>
+      </Link>
     </>
   );
 }
 export const ReadBtn: FC<{ url: string , msg?:string }> = ({ url , msg="" }) => {
+  if (url.startsWith("http")) {
+    return(
+      <a href={url} className="btnArticleLinkInText">{msg}↗</a>
+    )
+  }
   return(
-    <a href={url} className="btnArticleLinkInText">{msg}↗</a>
+    <Link href={url} className="btnArticleLinkInText">{msg}↗</Link>
   )
 }
 
@@ -214,7 +220,7 @@ export const Header_sm: React.FC = () => {
     <header className="header">
       <div className="header-inner">
         <HomeLink />
-        <a href="/" className="site-title">かわいいてっくももか</a>   
+        <Link href="/" className="site-title">かわいいてっくももか</Link>
         <button
           className="menu-button"
           onClick={toggleMenu}
@@ -225,9 +231,9 @@ export const Header_sm: React.FC = () => {
       </div>
       {isMenuOpen && (
         <nav className="menu">
-          <a href="/" className="header-a">HOME</a>
-          <a href="/ListTech" className="header-a">ARTICLE</a>
-          <a href="/PlivacyPolicy" className="header-a">PRIVACY</a>
+          <Link href="/" className="header-a">HOME</Link>
+          <Link href="/ListTech" className="header-a">ARTICLE</Link>
+          <Link href="/PlivacyPolicy" className="header-a">PRIVACY</Link>
         </nav>
       )}
     </header>
@@ -242,12 +248,12 @@ export const Header_pc: FC = () => {
       <header className="header">
         <div className="header-inner">
           <HomeLink />
-          <a href="/" className="site-title">かわいいてっくももか</a>   
+          <Link href="/" className="site-title">かわいいてっくももか</Link>
           <nav className="pc-menu">
             <ul className="header-ul">
-              <li className="header-li"><a href="/" className="header-a">HOME</a></li>
-              <li className="header-li"><a href="/ListTech" className="header-a">ARTICLE</a></li>
-              <li className="header-li"><a href="/PlivacyPolicy" className="header-a">PRIVACY</a></li>
+              <li className="header-li"><Link href="/" className="header-a">HOME</Link></li>
+              <li className="header-li"><Link href="/ListTech" className="header-a">ARTICLE</Link></li>
+              <li className="header-li"><Link href="/PlivacyPolicy" className="header-a">PRIVACY</Link></li>
             </ul>
           </nav>
         </div>
@@ -258,11 +264,11 @@ export const Header_pc: FC = () => {
 
 export const HomeLink: React.FC = () => {
   return (
-    <a href="/" >
+    <Link href="/">
       <img
-        src="favicon.ico" 
+        src="favicon.ico"
       />
-    </a>
+    </Link>
   );
 };
 
