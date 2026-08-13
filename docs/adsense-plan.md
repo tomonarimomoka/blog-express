@@ -37,7 +37,7 @@
 - [ ] Google AdSenseの審査用/運用用スクリプトタグを`next/script`で設置する（現状は`<Helmet>`内の`<script>`タグのまま）
 - [ ] `LastUpdate`コンポーネントの`document.lastModified`依存を解消する（記事データからprops経由で日付を渡す方式に変更） — **未解消。`next build`実行時に`/`のプリレンダリングが`ReferenceError: document is not defined`で失敗することを確認済み（ビルドブロッカー、要優先対応）**
 - [ ] `<a href>` を `next/link`の`<Link>`に統一する（`Parts.tsx`・`page.tsx`とも現状すべて素の`<a>`のまま）
-- [ ] 重複ファイル `FirstCodeReview .tsx`（末尾スペース） と `FirstCodeReview.tsx` を整理し、不要な方を削除する（`src/app/artical/`に両方とも現存、未整理）
+- [x] 重複ファイル `FirstCodeReview .tsx`（末尾スペース） と `FirstCodeReview.tsx` を整理し、不要な方を削除する → 未完成の下書き（`export const Index`、内容も途中）だった`FirstCodeReview.tsx`を削除し、完成版の`FirstCodeReview .tsx`（末尾スペース）の内容を`FirstCodeReview.tsx`にリネームして統一
 - [ ] ローカルビルドで各記事のHTMLに中身が入っているか確認する（View Source / SSR確認） — 実施したところ上記の`document is not defined`エラーでビルド自体が失敗する状態
 
 ---
@@ -99,3 +99,4 @@
 
 ### 2026-08-14
 - URLをケバブケースに統一する方針を決定。あわせて旧サイト（`blog-react/dist`）の`.htaccess`に新URLへの301リダイレクト追加が必要なことを確認・タスク化
+- 重複ファイル`FirstCodeReview .tsx`（末尾スペース）／`FirstCodeReview.tsx`を整理。未完成の下書きだった`FirstCodeReview.tsx`を削除し、完成版（末尾スペース版）の内容を正式な`FirstCodeReview.tsx`にリネーム
