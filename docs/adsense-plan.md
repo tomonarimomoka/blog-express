@@ -30,7 +30,8 @@
   - [ ] 各記事のURLをケバブケースに変更する（ルーティング化タスクと合わせて実施）
   - [ ] `/home/miku/source/blog-react/dist/.htaccess` を修正し、現行のPascalCase URL（`/AwsForBeginner`等）から新しいkebab-case URLへの301リダイレクトを追記する（同ファイルは旧`.html`→PascalCase URLへのリダイレクトを既に持っているため、今回はその先にもう一段リダイレクトを追加する形になる）
 - [ ] 未移行ページの移行: `IndexEn`（英語トップ）, `ListTech`, `PlivacyPolicy`（`src/app/list/`には`ListAll`/`ListExperiences`/`ListExplanation`/`ListFistSeries`はあるが上記3つは未確認）
-- [ ] 画像アセットを `public/assets/` にコピーする（`public/`確認済み、現状1枚も移行されておらず記事内`<img>`・認定バッジ画像等が壊れている）
+- [x] 画像アセットを `public/assets/` にコピーする → `blog-react/public/assets/`から画像31点、`blog-react/public/favicon.ico`を`public/`直下にコピー済み
+  - [ ] `src/app/page.tsx`内の4箇所（`SILVSE11JPN.jpg`等の認定バッジ画像）が`path="./assets/..."`という相対パスのままになっている。`/assets/...`（root-relative）に統一する
 - [ ] `react-helmet-async`によるタイトル設定をNext.jsの`export const metadata`に置き換える（App Routerと相性が悪いため）。`Parts.tsx`の`ArticalPage`が引き続き`<Helmet>`でtitleとAdSenseスクリプトを設置しており未着手
 - [ ] 全記事に`meta description`を設定する（AdSense審査でも評価されるSEO基本対応）
 - [ ] Google Analytics（`react-ga4`）の初期化をNext.js向けに移植する（`next/script`や専用クライアントコンポーネント経由）。現状`Parts.tsx`の`ArticalPage`内で`useEffect`から直接`ReactGA.send`しているのみで、`next/script`化・初期化処理の移植は未着手
@@ -102,3 +103,4 @@
 - 重複ファイル`FirstCodeReview .tsx`（末尾スペース）／`FirstCodeReview.tsx`を整理。未完成の下書きだった`FirstCodeReview.tsx`を削除し、完成版（末尾スペース版）の内容を正式な`FirstCodeReview.tsx`にリネーム
 - `Parts.tsx`内の内部リンク（`ArticleCard`/`ReadBtn`の内部URL分岐/`Header_sm`/`Header_pc`/`HomeLink`）を`next/link`の`<Link>`に置き換え。外部URLを扱う`ReadBtn`のhttp(s)分岐と`References_link`（すべて外部参考文献）はそのまま`<a>`を維持
 - SNS等の実名アカウント紐付けは対象外に決定。実名運用しているSNSはLinkedInのみ
+- `blog-react/public/assets/`の画像31点と`favicon.ico`を`blog-next/public/`にコピー。記事内`<img>`・認定バッジ画像の壊れ画像を解消。ただし`page.tsx`の4箇所だけ`./assets/...`という相対パス表記のままで、他記事の`/assets/...`表記と不統一なのが残タスク
