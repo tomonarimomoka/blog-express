@@ -36,7 +36,7 @@
 - [ ] Google Analytics（`react-ga4`）の初期化をNext.js向けに移植する（`next/script`や専用クライアントコンポーネント経由）。現状`Parts.tsx`の`ArticalPage`内で`useEffect`から直接`ReactGA.send`しているのみで、`next/script`化・初期化処理の移植は未着手
 - [ ] Google AdSenseの審査用/運用用スクリプトタグを`next/script`で設置する（現状は`<Helmet>`内の`<script>`タグのまま）
 - [ ] `LastUpdate`コンポーネントの`document.lastModified`依存を解消する（記事データからprops経由で日付を渡す方式に変更） — **未解消。`next build`実行時に`/`のプリレンダリングが`ReferenceError: document is not defined`で失敗することを確認済み（ビルドブロッカー、要優先対応）**
-- [ ] `<a href>` を `next/link`の`<Link>`に統一する（`Parts.tsx`・`page.tsx`とも現状すべて素の`<a>`のまま）
+- [x] `<a href>` を `next/link`の`<Link>`に統一する → `Parts.tsx`内の内部リンク（`ArticleCard`/`ReadBtn`の内部URL分岐/`Header_sm`/`Header_pc`/`HomeLink`）を`<Link>`化。外部URL（`ReadBtn`のhttp(s)分岐、`References_link`）はNext.jsの推奨に従いそのまま`<a>`を維持
 - [x] 重複ファイル `FirstCodeReview .tsx`（末尾スペース） と `FirstCodeReview.tsx` を整理し、不要な方を削除する → 未完成の下書き（`export const Index`、内容も途中）だった`FirstCodeReview.tsx`を削除し、完成版の`FirstCodeReview .tsx`（末尾スペース）の内容を`FirstCodeReview.tsx`にリネームして統一
 - [ ] ローカルビルドで各記事のHTMLに中身が入っているか確認する（View Source / SSR確認） — 実施したところ上記の`document is not defined`エラーでビルド自体が失敗する状態
 
@@ -51,7 +51,7 @@
   - 個人の特定に繋がりすぎる情報（住所・勤務先詳細など）は載せない方針を明記
 - [ ] サイト全体の著者表記を統一する（ヘッダー/フッター/各記事末尾など、名乗り方をブレさせない）
 - [ ] 記事に著者情報の構造化データ（`schema.org` の `Person`/`Article` の `author`）を埋め込む
-- [ ] SNS等の実名アカウントとの紐付けが必要か検討する（信頼性向上のため。任意）
+- [x] SNS等の実名アカウントとの紐付けが必要か検討する（信頼性向上のため。任意） → 対象外。実名で運用しているSNSはLinkedInのみで、紐付けは行わない
 - [ ] プライバシーポリシーの内容を実名運用に合わせて更新する
 
 ---
@@ -100,3 +100,5 @@
 ### 2026-08-14
 - URLをケバブケースに統一する方針を決定。あわせて旧サイト（`blog-react/dist`）の`.htaccess`に新URLへの301リダイレクト追加が必要なことを確認・タスク化
 - 重複ファイル`FirstCodeReview .tsx`（末尾スペース）／`FirstCodeReview.tsx`を整理。未完成の下書きだった`FirstCodeReview.tsx`を削除し、完成版（末尾スペース版）の内容を正式な`FirstCodeReview.tsx`にリネーム
+- `Parts.tsx`内の内部リンク（`ArticleCard`/`ReadBtn`の内部URL分岐/`Header_sm`/`Header_pc`/`HomeLink`）を`next/link`の`<Link>`に置き換え。外部URLを扱う`ReadBtn`のhttp(s)分岐と`References_link`（すべて外部参考文献）はそのまま`<a>`を維持
+- SNS等の実名アカウント紐付けは対象外に決定。実名運用しているSNSはLinkedInのみ
