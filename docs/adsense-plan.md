@@ -19,10 +19,11 @@
 
 - [x] URLをケバブケースに統一する方針を決定（実施・`.htaccess`リダイレクトは未着手）
   - [ ] 各記事のURLをケバブケース化
-  - [ ] `blog-react/dist/.htaccess`に新URLへの301リダイレクトを追加
+  - [ ] `blog-react/todo/.htaccess`に新URLへの301リダイレクトを追加
+- [ ] Google Analyticsの初期化（`ReactGA.initialize()`）を`blog-react`から移植する
+- [ ] wwwドメインを非wwwへ301リダイレクト
 - [ ] 全記事に`meta description`を設定
 - [ ] `react-helmet-async`のタイトル設定を`export const metadata`に置き換え
-- [ ] Google Analyticsの初期化を`next/script`経由に移植
 
 ### Phase 3: ブログの実名化
 
@@ -36,6 +37,7 @@
 ### Phase 4: 公開 → Search Console → AdSense申請
 
 - [ ] ホスティング方針を決めてデプロイする
+- [ ] お問い合わせフォームを設置する（Googleフォーム等を想定）
 - [ ] HTTPS統一、`robots.txt`（`Disallow: /`になっていないこと）を確認する
 - [ ] `sitemap.xml`を生成しSearch Consoleに送信する
 - [ ] 主要記事のインデックス登録をリクエストする
@@ -73,3 +75,6 @@
 ### 2026-08-17
 - `IndexEn`・`ListTech`・`PlivacyPolicy`を旧`blog-react`から移植し`page.tsx`化
 - create-next-appのデフォルトテンプレートのままだった`page.tsx`を実際のホーム内容に置き換え
+- 記事一覧ページ4本（`src/app/list/`）をルーティング化
+- `page.tsx`の画像パスを`/assets/...`に統一
+- `blog-react`の実態を調査。デプロイ手順（レンタルサーバー）を確認し`.htaccess`参照先を`todo/.htaccess`に訂正、`todo/2026.md`から未反映タスク（wwwリダイレクト・お問い合わせフォーム）を追加、Google Analyticsが`initialize()`未呼び出しで実質計測できていないことを確認
