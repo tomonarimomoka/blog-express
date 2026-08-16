@@ -11,7 +11,6 @@
 - [x] 未移行ページの移行（`IndexEn`, `ListTech`, `PlivacyPolicy`）
 - [x] 画像アセットを`public/assets/`に移行
   - [x] `page.tsx`内の相対パス画像4箇所を`/assets/...`表記に統一
-- [ ] `react-helmet-async`のタイトル設定を`export const metadata`に置き換え（Server Component化のため）
 - [x] `LastUpdate`の`document.lastModified`依存を解消（ビルドエラーの原因だった）
 - [x] `<a href>`を`next/link`の`<Link>`に統一
 - [x] ローカルビルドで各記事のHTML出力を確認
@@ -22,6 +21,7 @@
   - [ ] 各記事のURLをケバブケース化
   - [ ] `blog-react/dist/.htaccess`に新URLへの301リダイレクトを追加
 - [ ] 全記事に`meta description`を設定
+- [ ] `react-helmet-async`のタイトル設定を`export const metadata`に置き換え
 - [ ] Google Analyticsの初期化を`next/script`経由に移植
 
 ### Phase 3: ブログの実名化
