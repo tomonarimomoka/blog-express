@@ -7,10 +7,10 @@
 - [x] ホームを`Parts.tsx`共通コンポーネントで再構築
   - 自己紹介文はまだ匿名ハンドル「ももか」表記 → Phase 3で差し替え
 - [x] 各記事（26本）を`src/app/<記事名>/page.tsx`にルーティング化（1記事1フォルダ方式）
-- [ ] 記事一覧ページ（`src/app/list/`）のルーティング化
+- [x] 記事一覧ページ（`src/app/list/`）のルーティング化
 - [x] 未移行ページの移行（`IndexEn`, `ListTech`, `PlivacyPolicy`）
 - [x] 画像アセットを`public/assets/`に移行
-  - [ ] `page.tsx`内の相対パス画像4箇所を`/assets/...`表記に統一
+  - [x] `page.tsx`内の相対パス画像4箇所を`/assets/...`表記に統一
 - [ ] `react-helmet-async`のタイトル設定を`export const metadata`に置き換え（Server Component化のため）
 - [x] `LastUpdate`の`document.lastModified`依存を解消（ビルドエラーの原因だった）
 - [x] `<a href>`を`next/link`の`<Link>`に統一

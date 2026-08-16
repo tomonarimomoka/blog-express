@@ -65,10 +65,10 @@ export default function Home() {
         <li>東京大学 松尾・岩澤研究室 大規模言語モデル 2024 修了</li>
         <li>AWS Certified Cloud Practitioner</li>
       </ul>
-      <Img_20 path="./assets/SILVSE11JPN.jpg" alt="認定バッチ"/>
-      <Img_20 path="./assets/BRZDBA19CJPN.jpg" alt="認定バッチ" />
-      <Img_10 path="./assets/generative-ai-passport-logo.png" alt="認定バッチ" />
-      <Img_10 path="./assets/AWS_exam_pass.png" alt="認定バッチ"/>
+      <Img_20 path="/assets/SILVSE11JPN.jpg" alt="認定バッチ"/>
+      <Img_20 path="/assets/BRZDBA19CJPN.jpg" alt="認定バッチ" />
+      <Img_10 path="/assets/generative-ai-passport-logo.png" alt="認定バッチ" />
+      <Img_10 path="/assets/AWS_exam_pass.png" alt="認定バッチ"/>
     </ArticalPage>
   );
 }
