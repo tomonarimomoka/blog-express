@@ -1,7 +1,6 @@
-import { FC } from "react";
 import {ArticleCard , SubTitle , FlexBox} from '../Parts';
 
-export const ListFistSeries: FC = () => {
+export default function Page() {
 
     return(
         <>  
