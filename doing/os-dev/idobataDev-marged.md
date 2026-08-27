@@ -73,7 +73,13 @@ LT資料　　　　　　　 ：https://susisu.hatenablog.com/entry/2025/05/28/
 [PINとは何かをよく説明しているスライド](https://docs.google.com/presentation/d/1SnlghUYWG6Bjnene6BONJIPvcBKGrQw6ZhmYSHAcYHs/mobilepresent?slide=id.gd52bcfb153_1_61)
 
 ## OS開発の基礎
+### x86
 x86はCPUの仕様
+### EIP/RIP
+x86のInstruction point（次の命令のポインタ）
+E：32
+R：64
+
 ### デバックの仕方
 * デバック用関数を書く
   * Rustにもprint関数はあるけど、OSがないと使えないため、OS開発の時は自前で書く必要がある
@@ -131,6 +137,9 @@ DBの排他ロックのようなもの。（共有ロックのように読み込
 セマフォ：何人アクセスできるかを制限できる。ミューテックスはバイナリセマフォという特殊なセマフォとみなすことができる
 
 MutexGurd：Mutexのアクセス権を取得できた（英語でscaop lock）ことを保持する
+
+### スピンロック
+ロックが取れるまでループすること
 
 ## ページング
 
@@ -287,26 +296,3 @@ ACPI（Advanced Configuration and Power Interface）は、OSがハードウェ�
 なぜ何度も言うの？CPUは覚えていらない？
 
  ⇒ 「一度言えばCPUが“待機モード”を覚えてくれる」タイプの命令じゃない
-
-
-x86はCPUの仕様### `asm!("pause")`とは？
-
-主に **スピン待ち（busy-wait）ループ**で CPU に「いま回り続けて待ってるだけだよ」と伝える *ヒント命令*。
-
-効果としてはだいたいこんな感じ：
-
-- スピンループの **消費電力・発熱を下げやすい**
-- Hyper-Threading 環境で **同じコア上の相方スレッドを邪魔しにくい**
-- ループが空回りして **パイプラインに悪影響**を出すのを減らす
-
-なぜ何度も言うの？CPUは覚えていらない？
-
- ⇒ 「一度言えばCPUが“待機モード”を覚えてくれる」タイプの命令じゃない
-
-### EIP/RIP
-Instruction point（次の命令のポインタ）
-E：32
-R：64
-
-## スピンロック
-ロックが取れるまでループすること
