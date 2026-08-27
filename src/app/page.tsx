@@ -3,7 +3,7 @@ import {ArticalPage , SubTitle , ReadBtn , CustomTable , Img_10 , Img_20} from '
 export default function Home() {
   return (
     <ArticalPage title="💗ようこそ！かわいいてっくももかへ💗">
-      <ReadBtn msg="English" url="/IndexEn" />
+      <ReadBtn msg="English" url="/index-en" />
       <SubTitle subTitle="♥このブログについて" />
       <p>
         このブログはエンジニア役に立つことを目指しています。
@@ -17,10 +17,10 @@ export default function Home() {
       </p>
       <SubTitle subTitle="♥お勧めの記事" />
       <ul>
-        <li>ブラックボックステストのテスト技法<ReadBtn url="/SimpleTest" /></li>
-        <li>一浪日大でもホワイト企業に就職する方法<ReadBtn url="/JobHuntting" /></li>
-        <li>【生成AI】ハッカソン参加レポート vol.1<ReadBtn url="/Hakkason_1" /></li>
-        <li>【発表】LT会参加レポート<ReadBtn url="/FirstLTparty" /></li>
+        <li>ブラックボックステストのテスト技法<ReadBtn url="/simple-test" /></li>
+        <li>一浪日大でもホワイト企業に就職する方法<ReadBtn url="/job-hunting" /></li>
+        <li>【生成AI】ハッカソン参加レポート vol.1<ReadBtn url="/hakkason-1" /></li>
+        <li>【発表】LT会参加レポート<ReadBtn url="/first-lt-party" /></li>
       </ul>
       <SubTitle subTitle="本サイト「かわいいテックももか」の歴史" />
       <CustomTable>
@@ -28,7 +28,7 @@ export default function Home() {
         <tr><td>2023.10</td><td>「かわいいテック　ももか」開設！</td></tr>
         <tr><td>2024.7</td><td>10記事達成</td></tr>
         <tr><td>2025.4</td><td>20記事達成</td></tr>
-        <tr><td>2025.5</td><td>TypeScrip×Reactにシステムリプレイス<ReadBtn url="/HowToMigrateBlog" /></td></tr>
+        <tr><td>2025.5</td><td>TypeScrip×Reactにシステムリプレイス<ReadBtn url="/how-to-migrate-blog" /></td></tr>
       </CustomTable>
       <SubTitle subTitle="♥筆者について" />
 
@@ -47,12 +47,12 @@ export default function Home() {
       <h3>■経歴</h3>
       <p>
         私のエンジニアになるまでの軌跡は
-        「一浪日大でもホワイト企業に就職する方法」<ReadBtn url="/jobHuntting" />
+        「一浪日大でもホワイト企業に就職する方法」<ReadBtn url="/job-hunting" />
         をご覧ください✨
       </p>
       <p>
         最近転職をしました。
-        転職に関する詳細は「初めて転職」<ReadBtn url="/FirstCareerChange" />
+        転職に関する詳細は「初めて転職」<ReadBtn url="/first-career-change" />
         をご覧ください。
       </p>
       <h3>■保有資格・試験</h3>

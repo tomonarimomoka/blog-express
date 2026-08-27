@@ -19,7 +19,7 @@ export default function Page() {
       <SubTitle subTitle="My recommend" />
       <p>There are some english posts. I would like to post more English articles.</p>
       <ul>
-        <li>How to boot by USB in UEFI device<ReadBtn url="/HowToBootSurfaceByUSB" /></li>
+        <li>How to boot by USB in UEFI device<ReadBtn url="/how-to-boot-surface-by-usb" /></li>
       </ul>
       <SubTitle subTitle="History of this site 'kawaii tech momoka'" />
       <CustomTable>
@@ -27,7 +27,7 @@ export default function Page() {
         <tr><td>2023.10</td><td>Launched "kawaii tech momoka"!</td></tr>
         <tr><td>2024.7</td><td>10 blog posts</td></tr>
         <tr><td>2025.4</td><td>20 blog posts</td></tr>
-        <tr><td>2025.5</td><td>Migrated system to TypeScript × React<ReadBtn url="/HowToMigrateBlog" /></td></tr>
+        <tr><td>2025.5</td><td>Migrated system to TypeScript × React<ReadBtn url="/how-to-migrate-blog" /></td></tr>
       </CustomTable>
       <SubTitle subTitle="♥About the Author" />
 
@@ -46,11 +46,11 @@ export default function Page() {
       </p>
       <h3>■Career</h3>
       <p>
-        If you want to know my journey to becoming an engineer, you should read<ReadBtn msg="my job hunting" url="/jobHuntting" />
+        If you want to know my journey to becoming an engineer, you should read<ReadBtn msg="my job hunting" url="/job-hunting" />
       </p>
       <p>
         I recently changed jobs.
-        For details about my career change, please see <ReadBtn msg="my first career change" url="/FirstCareerChange" />.
+        For details about my career change, please see <ReadBtn msg="my first career change" url="/first-career-change" />.
       </p>
       <h3>■Qualifications and Exams</h3>
       <ul>

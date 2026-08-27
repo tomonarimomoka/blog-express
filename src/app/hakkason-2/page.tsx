@@ -62,7 +62,7 @@ st.write("Hello world")`
       <li>
         ソース管理<br/>
         ソース管理はほとんどの場合がGitHubなので、使ったことない人は練習しておきましょう。<br/>
-        <ReadBtn url="/GitForBeginner" msg="はじめてのGit" />でGitの使い方を解説していますので、確認しておきましょう！
+        <ReadBtn url="/git-for-beginner" msg="はじめてのGit" />でGitの使い方を解説していますので、確認しておきましょう！
       </li>
     </ul>
     

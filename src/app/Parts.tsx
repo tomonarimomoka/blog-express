@@ -232,8 +232,8 @@ export const Header_sm: React.FC = () => {
       {isMenuOpen && (
         <nav className="menu">
           <Link href="/" className="header-a">HOME</Link>
-          <Link href="/ListTech" className="header-a">ARTICLE</Link>
-          <Link href="/PlivacyPolicy" className="header-a">PRIVACY</Link>
+          <Link href="/list-tech" className="header-a">ARTICLE</Link>
+          <Link href="/privacy-policy" className="header-a">PRIVACY</Link>
         </nav>
       )}
     </header>
@@ -252,8 +252,8 @@ export const Header_pc: FC = () => {
           <nav className="pc-menu">
             <ul className="header-ul">
               <li className="header-li"><Link href="/" className="header-a">HOME</Link></li>
-              <li className="header-li"><Link href="/ListTech" className="header-a">ARTICLE</Link></li>
-              <li className="header-li"><Link href="/PlivacyPolicy" className="header-a">PRIVACY</Link></li>
+              <li className="header-li"><Link href="/list-tech" className="header-a">ARTICLE</Link></li>
+              <li className="header-li"><Link href="/privacy-policy" className="header-a">PRIVACY</Link></li>
             </ul>
           </nav>
         </div>

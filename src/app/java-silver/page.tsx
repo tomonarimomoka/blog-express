@@ -99,7 +99,7 @@ export default function Page() {
     </p>
     
   <p>
-    Oracleのベンダー資格にご興味があれば、<ReadBtn url="/OracleBronzaDBA" msg="Oracle Master Bronze合格体験記" />
+    Oracleのベンダー資格にご興味があれば、<ReadBtn url="/oracle-bronze-dba" msg="Oracle Master Bronze合格体験記" />
     もぜひご覧ください！
   </p>
   

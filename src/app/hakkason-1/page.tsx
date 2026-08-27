@@ -74,7 +74,7 @@ def makepromptForLP(referenceUrl,businessType,target,personasGender,age,imageCol
     <p>■ソース管理</p>
     <p>
       ソース管理はほとんどの場合がGitHubなので、使ったことない人は練習しておきましょう。<br/>
-      <ReadBtn url="/GitForBeginner" msg="はじめてのGit" />でGitの使い方を解説していますので、確認しておきましょう！
+      <ReadBtn url="/git-for-beginner" msg="はじめてのGit" />でGitの使い方を解説していますので、確認しておきましょう！
     </p>
     
     <SubTitle subTitle="私たちのチームが作ったもの" />
