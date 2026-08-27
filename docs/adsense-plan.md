@@ -11,14 +11,14 @@
 - [x] 未移行ページの移行（`IndexEn`, `ListTech`, `PlivacyPolicy`）
 - [x] 画像アセットを`public/assets/`に移行
   - [x] `page.tsx`内の相対パス画像4箇所を`/assets/...`表記に統一
-- [x] `LastUpdate`の`document.lastModified`依存を解消（ビルドエラーの原因だった）
+- [ ] `LastUpdate`の`document.lastModified`依存を解消（ビルドエラーの原因だった）
 - [x] `<a href>`を`next/link`の`<Link>`に統一
 - [x] ローカルビルドで各記事のHTML出力を確認
 
 ### Phase 2: SEO・URL整備
 
 - [x] URLをケバブケースに統一する方針を決定（実施・`.htaccess`リダイレクトは未着手）
-  - [ ] 各記事のURLをケバブケース化
+  - [x] 各記事のURLをケバブケース化
   - [ ] `blog-react/todo/.htaccess`に新URLへの301リダイレクトを追加
 - [ ] Google Analyticsの初期化（`ReactGA.initialize()`）を`blog-react`から移植する
 - [ ] wwwドメインを非wwwへ301リダイレクト
@@ -65,6 +65,11 @@
 - [ ] 記事の内容について学びつつ１つずつ記事を作成×記事数分
 
 ## 📝 進捗ログ
+
+### 2026-08-24
+- 各記事のURLをケバブケース化（`src/app/`配下33フォルダを`git mv`でリネームし、`Parts.tsx`・各ページ内の`component=`/`url=`参照を追従修正）
+- リネーム時、`.next`の生成物（2026-08-19付、消失した別セッションの作業の痕跡と思われる）に誤字修正済みの綴りが残っていたため、ユーザー確認の上でそちらの綴りを正式採用（`job-hunting`・`list-first-series`・`oracle-bronze-dba`・`privacy-policy`・`tskaigi-report`）
+- `next build`で`/http-method`のプリレンダリング時に`document is not defined`エラーを確認 → `Parts.tsx`の`LastUpdate`が`document.lastModified`をレンダー中に直接参照しているのが原因で、今回のリネームとは無関係の既存バグ（Phase 1で解消済みとされていたが実際は未解消）。`.htaccess`リダイレクトの追加は未着手のまま
 
 ### 2026-08-19
 - 旧`docs/adsense-tasks-v2.md`（統合済みで現存せず）にあったAWS移行の内容が本計画書に反映されていなかったことが判明 → 「Phase 5: AWSへのサーバー移行」として復元・追記（ロリポップの契約状況、S3+CloudFront構成、DNS切り替え、解約タイミングを含む）
